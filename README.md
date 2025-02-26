@@ -1,3 +1,57 @@
+# 使用说明
+
+## 安装软件
+1. 下载、安装Windsurf并注册Codeium账号。
+2. 安装Unity 2022.3
+   - 下载安装 Unity Hub，注意不是团结引擎。
+   - 到 https://unity.com/releases/editor/archive 下载Unity 2022.3.x最新版本。如果自动跳转到了unity.cn的域名，就在浏览器输入 unityhub://2022.3.59f1/630718f645a5 在Unity Hub中打开。如果是苹果M芯片电脑，就选择Silicon版本。
+   - 安装的版本号要注意是f1结尾，而不是f1c1结尾。（虽然只是demo无所谓，要养成好习惯）
+3. 在Unity Hub中创建项目
+   - 模版选3D (Built-in Render Pipeline)
+   - Location选的是项目的父文件夹，Unity会在里面新建项目自己的文件夹。
+   - 底下两个Connect to Unity Cloud和Use Unity Version Control都不选，都是垃圾，还会导致很多问题。
+4. 在Unity项目中配置Windsurf
+   - https://github.com/Asuta/com.unity.ide.windsurf 配置完External Tools之后点一下Regenerate project files （如果要切换回Rider，也在这里操作）
+   - 在项目中新建一个C#脚本，双击，会自动调用Windsurf打开。
+## 配置MCP
+1. 把本项目克隆下来
+2. UnityMCPPlugin文件夹扔进项目的Assets里
+3. 配置项目依赖项，修改Packages/manifest.json 加上NewtonsoftJson和TextMeshPro
+```json
+{
+  "dependencies": {
+    ...
+
+    "com.unity.ide.windsurf": "https://github.com/Asuta/com.unity.ide.windsurf.git",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.textmeshpro": "3.0.7",
+
+    ...
+  }
+}
+```
+4. 安装好NodeJS（版本18以上），进入unity-mcp-server文件夹，编译：
+```bash
+npm i
+npm run build
+```
+5. 在Windsurf里点聊天输入框上面的锤子图标，选右边的Configure，修改配置
+```json
+{
+    "mcpServers": {
+      "UnityMCP": {
+        "command": "node",
+        "args": ["/注意这里要写绝对路径/UnityMCP/unity-mcp-server/build/index.js"]
+      }
+    }
+}
+```
+6. 点Refresh，上面一行出现UnityMCP 3 tools就是成功了
+
+以下为原版README内容：
+=
+
+
 # UnityMCP
 
 UnityMCP is a powerful Unity Editor plugin that implements the Model Context Protocol (MCP), enabling seamless integration between Unity and AI assistants. It provides real-time editor state monitoring, remote command execution, and comprehensive logging capabilities.

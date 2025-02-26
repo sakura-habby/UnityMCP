@@ -635,7 +635,9 @@ try
                     using System;
                     using System.Linq;
                     using System.Collections.Generic;
-    
+                    using TMPro;
+                    using UnityEngine.UI;
+     
                     public class CodeExecutor
                     {{
                         public static object Execute()
@@ -645,20 +647,62 @@ try
                         }}
                     }}
                 ";
-    
+     
                 // Use Mono's built-in compiler
                 var options = new System.CodeDom.Compiler.CompilerParameters
                 {
                     GenerateInMemory = true
                 };
                 
-                // Add necessary references
-                options.ReferencedAssemblies.Add(typeof(UnityEngine.Object).Assembly.Location);
-                options.ReferencedAssemblies.Add(typeof(UnityEditor.Editor).Assembly.Location);
-                options.ReferencedAssemblies.Add(typeof(System.Linq.Enumerable).Assembly.Location); // Add System.Core for LINQ
-                options.ReferencedAssemblies.Add(typeof(object).Assembly.Location); // Add mscorlib
-                options.ReferencedAssemblies.Add(AppDomain.CurrentDomain.GetAssemblies()
-                    .First(a => a.GetName().Name == "netstandard").Location); // Add netstandard
+                // Add all assemblies from the current AppDomain
+                var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                var assemblyPaths = new HashSet<string>();
+
+                foreach (var assembly in assemblies)
+                {
+                    try
+                    {
+                        // Skip dynamic assemblies
+                        if (assembly.IsDynamic || string.IsNullOrEmpty(assembly.Location))
+                            continue;
+
+                        // Add the assembly if we haven't already
+                        if (assemblyPaths.Add(assembly.Location))
+                        {
+                            options.ReferencedAssemblies.Add(assembly.Location);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogWarning($"[UnityMCP] Failed to add assembly reference: {assembly.FullName}. Error: {e.Message}");
+                    }
+                }
+
+                // Add Unity-specific assemblies that might not be in the AppDomain
+                var unityAssemblies = new[]
+                {
+                    "UnityEngine.UI",
+                    "Unity.TextMeshPro",
+                    "UnityEngine.CoreModule",
+                    "UnityEngine.UIModule",
+                    "UnityEditor.CoreModule"
+                };
+
+                foreach (var assemblyName in unityAssemblies)
+                {
+                    try
+                    {
+                        var assembly = assemblies.FirstOrDefault(a => a.GetName().Name == assemblyName);
+                        if (assembly != null && !assembly.IsDynamic && !string.IsNullOrEmpty(assembly.Location))
+                        {
+                            options.ReferencedAssemblies.Add(assembly.Location);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogWarning($"[UnityMCP] Failed to add Unity assembly reference: {assemblyName}. Error: {e.Message}");
+                    }
+                }
                 
                 // Compile and execute
                 using (var provider = new Microsoft.CSharp.CSharpCodeProvider())
@@ -669,7 +713,7 @@ try
                         var errors = string.Join("\n", results.Errors.Cast<CompilerError>().Select(e => e.ErrorText));
                         throw new Exception($"Compilation failed:\n{errors}");
                     }
-    
+     
                     var assembly = results.CompiledAssembly;
                     var type = assembly.GetType("CodeExecutor");
                     var method = type.GetMethod("Execute");
