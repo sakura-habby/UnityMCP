@@ -56,10 +56,16 @@ npm run build
 3.  每次Windsurf执行完多关注Log里的报错，也让Windsurf自己关注
 4.  让Windsurf自己检查场景有没有设置错误
 5.  Windsurf让你操作Unity时，可以告诉他使用UnityMCP来操作
-6.  改到相对正确的版本时，一定要先提交！
-7.  Windsurf执行时，尽量把焦点切换到Unity窗口，因为修改完的代码需要实时重新编译才能起作用，而Windsurf不会等太长时间。
+6.  Windsurf执行时，尽量把焦点切换到Unity窗口，因为修改完的代码需要实时重新编译才能起作用，而Windsurf不会等太长时间。
+7.  改到相对正确的版本时，一定要先提交！（修改场景和prefab很容易出问题）
 ## 原理
 ![原理图](doc/unitymcp.png)
+UnityMCP插件包括服务端和客户端。
+服务端unity-mcp-server是一个MCP插件，Windsurf通过控制台与unity-mcp-server交互。
+unity-mcp-server在8080端口监听WebSocket协议。客户端UnityMCPPlugin通过WebSocket ws://localhost:8080与unity-mcp-server交互。
+每次Windsurf通过控制台向unity-mcp-server发送一个json格式的MCP命令，unity-mcp-server会将这个请求放到一个命令队列里，并且挂起这个请求。
+UnityMCPPlugin会向unity-mcp-server轮询这个队列，发现有请求，会在Unity里执行，将执行后的结果返回给unity-mcp-server。unity-mcp-server收到后会回应Windsurf，完成请求。<br/>
+[Windsurf提示](https://www.reddit.com/r/LocalLLaMA/comments/1h7sjyt/windsurf_cascade_leaked_system_prompt/)
 
 以下为原版README内容：
 =
