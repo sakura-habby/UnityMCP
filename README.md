@@ -60,36 +60,36 @@ npm run build
 7. 改到相对正确的版本时，一定要先提交！（修改场景和prefab很容易出问题）
 8. Windsurf打不开Cascade窗口了，提示“drag a view here to display”
    - Mac上运行下面命令清一下Windsurf缓存（注意备份）
-```bash
-# Remove Windsurf configuration
-rm -rf ~/Library/Application\ Support/windsurf/
-rm -rf ~/.windsurf/
+      ```bash
+      # Remove Windsurf configuration
+      rm -rf ~/Library/Application\ Support/windsurf/
+      rm -rf ~/.windsurf/
 
-# Remove Windsurf cache
-rm -rf ~/Library/Caches/windsurf/
+      # Remove Windsurf cache
+      rm -rf ~/Library/Caches/windsurf/
 
-# Remove any potential leftover preferences
-defaults delete com.codeium.windsurf 2>/dev/null || true
-```
+      # Remove any potential leftover preferences
+      defaults delete com.codeium.windsurf 2>/dev/null || true
+      ```
    - Windows上删掉下面几个文件夹（没试过，自求多福）
-```text
-%APPDATA%\windsurf
-%USERPROFILE%\.windsurf
-%LOCALAPPDATA%\windsurf
-```
+      ```text
+      %APPDATA%\windsurf
+      %USERPROFILE%\.windsurf
+      %LOCALAPPDATA%\windsurf
+      ```
 9. Windsurf执行UnityMCP命令总是失败，Unity的Console里面没有任何相关log，并且UnityMCP / Debug Window里面显示的也是正常。
-    - 有可能UnityMCP Plugin连接到的并不是Windsurf启动的unity-mcp-server，有可能启动了多个unity-mcp-server实例，也有可能8080端口已经被占用了。
-    - 先重启下电脑试试。
-    - 关闭Windsurf，运行
-```bash
-sudo lsof -iTCP:8080 -sTCP:LISTEN
-```
-看显示出来的进程是不是node，如果是，就运行
-```bash
-sudo killall node
-```
-这时候Unity工程里面会一直报错UnityMCP连接失败，打开Windsurf就能正常连上了。
-    - 如果还不行，就修改下端口号，客户端UnityMCP Plugin和服务端unity-mcp-server代码都要改，服务端改完需要重新编译。
+   - 有可能UnityMCP Plugin连接到的并不是Windsurf启动的unity-mcp-server，有可能启动了多个unity-mcp-server实例，也有可能8080端口已经被占用了。
+   - 先重启下电脑试试。
+   - 关闭Windsurf，运行
+      ```bash
+      sudo lsof -iTCP:8080 -sTCP:LISTEN
+      ```
+      看显示出来的进程是不是node，如果是，就运行
+      ```bash
+      sudo killall node
+      ```
+      这时候Unity工程里面会一直报错UnityMCP连接失败，打开Windsurf就能正常连上了。
+   - 如果还不行，就修改下端口号，客户端UnityMCP Plugin和服务端unity-mcp-server代码都要改，服务端改完需要重新编译。
 ## 原理
 ![原理图](doc/unitymcp.png)
 UnityMCP插件包括服务端和客户端。
