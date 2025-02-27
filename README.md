@@ -48,6 +48,19 @@ npm run build
 ```
 6. 点Refresh，上面一行出现UnityMCP 3 tools就是成功了
 
+## 常见问题和小帖士
+1. 配置完之后，我的Windsurf打不开Cascade窗口了！
+   - 怪你自己mcp配置错了。Mac下打开 ~/.codeium/windsurf/mcp_config.json 重新编辑，Windows自己找吧。
+2. 有什么最佳实践？
+   - 看[CONTRIBUTING.md](doc/CONTRIBUTING.md)，可以让Cascade添加到memory里。
+3.  每次Windsurf执行完多关注Log里的报错，也让Windsurf自己关注
+4.  让Windsurf自己检查场景有没有设置错误
+5.  Windsurf让你操作Unity时，可以告诉他使用UnityMCP来操作
+6.  改到相对正确的版本时，一定要先提交！
+7.  Windsurf执行时，尽量把焦点切换到Unity窗口，因为修改完的代码需要实时重新编译才能起作用，而Windsurf不会等太长时间。
+## 原理
+![原理图](doc/unitymcp.png)
+
 以下为原版README内容：
 =
 

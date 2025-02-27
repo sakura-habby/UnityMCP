@@ -1,0 +1,27 @@
+@startuml
+title UnityMCP插件组件图
+
+[Windsurf控制台] --> [unity-mcp-server : MCP插件]
+[unity-mcp-server] --> [UnityMCPPlugin : WebSocket\n(ws://localhost:8080)]
+[UnityMCPPlugin] --> [Unity应用程序]
+
+@enduml
+
+@startuml
+title UnityMCP插件时序图
+
+participant "Windsurf" as Windsurf
+participant "unity-mcp-server" as Server
+participant "UnityMCPPlugin" as Plugin
+participant "Unity应用程序" as Unity
+
+Windsurf -> Server : 发送JSON格式的MCP命令（控制台）
+Server -> Server : 将请求放入命令队列\n并挂起请求
+Plugin -> Server : 轮询命令队列（WebSocket）
+Server -> Plugin : 返回请求
+Plugin -> Unity : 在Unity中执行请求
+Unity --> Plugin : 返回执行结果
+Plugin -> Server : 返回执行结果
+Server -> Windsurf : 返回执行结果，完成请求
+
+@enduml
