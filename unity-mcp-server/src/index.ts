@@ -8,86 +8,6 @@ import {
   McpError,
 } from '@modelcontextprotocol/sdk/types.js';
 import { WebSocketServer, WebSocket } from 'ws';
-import { logger } from './logger.js';
-
-// Store server instance and state
-let server: UnityMCPServer | null = null;
-let isShuttingDown = false;
-
-// Global cleanup function
-async function cleanup() {
-  if (isShuttingDown || !server) {
-    return;
-  }
-  
-  logger.log('Starting cleanup...');
-  isShuttingDown = true;
-
-  const { unityConnection, wsServer, mcpServer } = server.getConnections();
-
-  if (unityConnection) {
-    try {
-      unityConnection.close();
-      logger.log('WebSocket connection closed');
-    } catch (error) {
-      logger.log('Error closing WebSocket connection:', error);
-    }
-  }
-
-  try {
-    await new Promise<void>((resolve, reject) => {
-      const timeout = setTimeout(() => {
-        reject(new Error('WebSocket server close timeout'));
-      }, 5000);
-
-      wsServer.close((err) => {
-        clearTimeout(timeout);
-        if (err) {
-          reject(err);
-        } else {
-          logger.log('WebSocket server closed');
-          resolve();
-        }
-      });
-    });
-  } catch (error) {
-    logger.log('Error closing WebSocket server:', error);
-  }
-
-  try {
-    await mcpServer.close();
-    logger.log('MCP server closed');
-  } catch (error) {
-    logger.log('Error closing MCP server:', error);
-  }
-}
-
-// Log unhandled errors and rejections
-process.on('uncaughtException', (error) => {
-  logger.log('Uncaught Exception', error);
-  cleanup().finally(() => process.exit(1));
-});
-
-process.on('unhandledRejection', (reason) => {
-  logger.log('Unhandled Rejection', reason as Error);
-  cleanup().finally(() => process.exit(1));
-});
-
-// Store the parent process PID to detect if parent dies
-const ppid = process.ppid;
-
-// Check parent process every 5 seconds
-setInterval(() => {
-  try {
-    // Try to send signal 0 to parent process to check if it exists
-    process.kill(ppid, 0);
-  } catch (e) {
-    if (!isShuttingDown) {
-      logger.log(`Parent process ${ppid} no longer exists, initiating shutdown`);
-      cleanup().finally(() => process.exit(0));
-    }
-  }
-}, 5000);
 
 interface UnityEditorState {
   activeGameObjects: string[];
@@ -107,9 +27,9 @@ interface LogEntry {
 }
 
 class UnityMCPServer {
-  private unityConnection: WebSocket | null = null;
+  private server: Server;
   private wsServer: WebSocketServer;
-  private mcpServer: Server;
+  private unityConnection: WebSocket | null = null;
   private editorState: UnityEditorState = {
     activeGameObjects: [],
     selectedObjects: [],
@@ -129,10 +49,8 @@ class UnityMCPServer {
   private commandStartTime: number | null = null;
 
   constructor() {
-    logger.log('Initializing UnityMCPServer');
-    
     // Initialize MCP Server
-    this.mcpServer = new Server(
+    this.server = new Server(
       {
         name: 'unity-mcp-server',
         version: '0.1.0',
@@ -150,70 +68,44 @@ class UnityMCPServer {
     this.setupTools();
 
     // Error handling
-    this.mcpServer.onerror = (error) => logger.log('[MCP Error]', error);
-    
-    // Handle process termination signals
-    const signals = ['SIGINT', 'SIGTERM', 'SIGHUP'];
-    signals.forEach(signal => {
-      process.on(signal, () => {
-        if (!isShuttingDown) {
-          logger.log(`Received ${signal} signal`);
-          cleanup().finally(() => process.exit(0));
-        }
-      });
+    this.server.onerror = (error) => console.error('[MCP Error]', error);
+    process.on('SIGINT', async () => {
+      await this.cleanup();
+      process.exit(0);
     });
-
-    // Ensure cleanup on process exit
-    process.on('exit', (code) => {
-      logger.log(`Process exit with code ${code}`);
-      // Note: We can't use async/await in 'exit' handler
-      if (this.unityConnection) {
-        this.unityConnection.close();
-      }
-      this.wsServer.close();
-    });
-  }
-
-  // Expose connections for cleanup
-  getConnections() {
-    return {
-      unityConnection: this.unityConnection,
-      wsServer: this.wsServer,
-      mcpServer: this.mcpServer
-    };
   }
 
   private setupWebSocket() {
-    logger.log('Setting up WebSocket server on port 8080');
+    console.error('[Unity MCP] WebSocket server starting on port 8080');
     
     this.wsServer.on('listening', () => {
-      logger.log('WebSocket server is listening for connections');
+      console.error('[Unity MCP] WebSocket server is listening for connections');
     });
 
     this.wsServer.on('error', (error) => {
-      logger.log('WebSocket server error:', error);
+      console.error('[Unity MCP] WebSocket server error:', error);
     });
 
     this.wsServer.on('connection', (ws: WebSocket) => {
-      logger.log('Unity Editor connected');
+      console.error('[Unity MCP] Unity Editor connected');
       this.unityConnection = ws;
 
       ws.on('message', (data: Buffer) => {
         try {
           const message = JSON.parse(data.toString());
-          logger.log(`Received message: ${message.type}`);
+          console.error('[Unity MCP] Received message:', message.type);
           this.handleUnityMessage(message);
         } catch (error) {
-          logger.log('Error handling message:', error);
+          console.error('[Unity MCP] Error handling message:', error);
         }
       });
 
       ws.on('error', (error) => {
-        logger.log('WebSocket error:', error);
+        console.error('[Unity MCP] WebSocket error:', error);
       });
 
       ws.on('close', () => {
-        logger.log('Unity Editor disconnected');
+        console.error('[Unity MCP] Unity Editor disconnected');
         this.unityConnection = null;
       });
     });
@@ -258,13 +150,13 @@ class UnityMCPServer {
         break;
       
       default:
-        logger.log(`Unknown message type: ${message.type}`);
+        console.error('[Unity MCP] Unknown message type:', message.type);
     }
   }
 
   private setupTools() {
     // List available tools with comprehensive documentation
-    this.mcpServer.setRequestHandler(ListToolsRequestSchema, async () => ({
+    this.server.setRequestHandler(ListToolsRequestSchema, async () => ({
       tools: [
         {
           name: 'get_editor_state',
@@ -442,7 +334,7 @@ class UnityMCPServer {
     }));
 
     // Handle tool calls with enhanced validation and error handling
-    this.mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
+    this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       // Verify Unity connection with detailed error message
       if (!this.unityConnection) {
         throw new McpError(
@@ -652,46 +544,6 @@ class UnityMCPServer {
     }
   }
 
-  public async cleanup() {
-    logger.log('Starting cleanup...');
-    
-    if (this.unityConnection) {
-      try {
-        this.unityConnection.close();
-        logger.log('WebSocket connection closed');
-      } catch (error) {
-        logger.log('Error closing WebSocket connection:', error);
-      }
-    }
-
-    try {
-      await new Promise<void>((resolve, reject) => {
-        const timeout = setTimeout(() => {
-          reject(new Error('WebSocket server close timeout'));
-        }, 5000);
-
-        this.wsServer.close((err) => {
-          clearTimeout(timeout);
-          if (err) {
-            reject(err);
-          } else {
-            logger.log('WebSocket server closed');
-            resolve();
-          }
-        });
-      });
-    } catch (error) {
-      logger.log('Error closing WebSocket server:', error);
-    }
-
-    try {
-      await this.mcpServer.close();
-      logger.log('MCP server closed');
-    } catch (error) {
-      logger.log('Error closing MCP server:', error);
-    }
-  }
-
   private filterLogs(options: {
     types?: string[],
     count?: number,
@@ -750,25 +602,28 @@ class UnityMCPServer {
     return filteredLogs;
   }
 
+  private async cleanup() {
+    if (this.unityConnection) {
+      this.unityConnection.close();
+    }
+    this.wsServer.close();
+    await this.server.close();
+  }
+
   async run() {
-    logger.log('Starting UnityMCP server');
     const transport = new StdioServerTransport();
-    await this.mcpServer.connect(transport);
-    logger.log('Unity MCP server running on stdio');
+    await this.server.connect(transport);
+    console.error('Unity MCP server running on stdio');
     
     // Wait for WebSocket server to be ready
     await new Promise<void>((resolve) => {
       this.wsServer.once('listening', () => {
-        logger.log('WebSocket server is ready on port 8080');
+        console.error('[Unity MCP] WebSocket server is ready on port 8080');
         resolve();
       });
     });
   }
 }
 
-// Start the server
-server = new UnityMCPServer();
-server.run().catch((error) => {
-  logger.log('Error running server:', error);
-  cleanup().finally(() => process.exit(1));
-});
+const server = new UnityMCPServer();
+server.run().catch(console.error);
