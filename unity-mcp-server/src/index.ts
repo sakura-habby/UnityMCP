@@ -48,6 +48,8 @@ class UnityMCPServer {
   } | null = null;
   private commandStartTime: number | null = null;
 
+  private isShuttingDown = false;
+
   constructor() {
     // Initialize MCP Server
     this.server = new Server(
@@ -69,9 +71,63 @@ class UnityMCPServer {
 
     // Error handling
     this.server.onerror = (error) => console.error('[MCP Error]', error);
-    process.on('SIGINT', async () => {
-      await this.cleanup();
-      process.exit(0);
+    
+    // Handle process termination signals
+    const signals = ['SIGINT', 'SIGTERM', 'SIGHUP'];
+    signals.forEach(signal => {
+      process.on(signal, async () => {
+        if (!this.isShuttingDown) {
+          console.error(`[Unity MCP] Received ${signal}, cleaning up...`);
+          await this.cleanup();
+          process.exit(0);
+        }
+      });
+    });
+
+    // Handle uncaught errors
+    process.on('uncaughtException', async (error) => {
+      console.error('[Unity MCP] Uncaught Exception:', error);
+      if (!this.isShuttingDown) {
+        await this.cleanup();
+        process.exit(1);
+      }
+    });
+
+    process.on('unhandledRejection', async (reason) => {
+      console.error('[Unity MCP] Unhandled Rejection:', reason);
+      if (!this.isShuttingDown) {
+        await this.cleanup();
+        process.exit(1);
+      }
+    });
+
+    // Store the parent process PID to detect if parent dies
+    const ppid = process.ppid;
+    setInterval(() => {
+      try {
+        process.kill(ppid, 0);
+      } catch (e) {
+        if (!this.isShuttingDown) {
+          console.error(`[Unity MCP] Parent process ${ppid} no longer exists, initiating shutdown`);
+          this.cleanup().finally(() => process.exit(0));
+        }
+      }
+    }, 5000);
+
+    // Ensure cleanup on process exit
+    process.on('exit', () => {
+      if (this.unityConnection) {
+        try {
+          this.unityConnection.close();
+        } catch (error) {
+          console.error('[Unity MCP] Error closing WebSocket connection on exit:', error);
+        }
+      }
+      try {
+        this.wsServer.close();
+      } catch (error) {
+        console.error('[Unity MCP] Error closing WebSocket server on exit:', error);
+      }
     });
   }
 
@@ -602,12 +658,49 @@ class UnityMCPServer {
     return filteredLogs;
   }
 
-  private async cleanup() {
-    if (this.unityConnection) {
-      this.unityConnection.close();
+  public async cleanup() {
+    if (this.isShuttingDown) {
+      return;
     }
-    this.wsServer.close();
-    await this.server.close();
+
+    this.isShuttingDown = true;
+    console.error('[Unity MCP] Starting cleanup...');
+
+    if (this.unityConnection) {
+      try {
+        this.unityConnection.close();
+        console.error('[Unity MCP] WebSocket connection closed');
+      } catch (error) {
+        console.error('[Unity MCP] Error closing WebSocket connection:', error);
+      }
+    }
+
+    try {
+      await new Promise<void>((resolve, reject) => {
+        const timeout = setTimeout(() => {
+          reject(new Error('WebSocket server close timeout'));
+        }, 5000);
+
+        this.wsServer.close((err) => {
+          clearTimeout(timeout);
+          if (err) {
+            reject(err);
+          } else {
+            console.error('[Unity MCP] WebSocket server closed');
+            resolve();
+          }
+        });
+      });
+    } catch (error) {
+      console.error('[Unity MCP] Error closing WebSocket server:', error);
+    }
+
+    try {
+      await this.server.close();
+      console.error('[Unity MCP] MCP server closed');
+    } catch (error) {
+      console.error('[Unity MCP] Error closing MCP server:', error);
+    }
   }
 
   async run() {
@@ -626,4 +719,8 @@ class UnityMCPServer {
 }
 
 const server = new UnityMCPServer();
-server.run().catch(console.error);
+server.run().catch(async (error) => {
+  console.error('[Unity MCP] Error running server:', error);
+  await server.cleanup();
+  process.exit(1);
+});
