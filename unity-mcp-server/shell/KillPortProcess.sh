@@ -14,7 +14,12 @@ pids=$(lsof -ti tcp:$port,udp:$port | tr '\n' ' ')
 if [ -z "$pids" ]; then
     echo -e "${YELLOW}No process found using port $port${NC}"
 else
-    echo -e "${RED}Terminating processes: $pids${NC}"
-    kill -9 $pids
+    echo -e "${RED}Terminating processes:${NC}"
+    for pid in $pids; do
+        # 获取进程的命令名称
+        command=$(ps -o comm= -p $pid)
+        echo -e "${RED}Killing PID $pid ($command)${NC}"
+        kill -9 $pid
+    done
     echo -e "${GREEN}Port $port released${NC}"
 fi

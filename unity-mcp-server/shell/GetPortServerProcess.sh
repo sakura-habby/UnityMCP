@@ -4,7 +4,7 @@
 PORT=28080
 
 # 获取使用指定端口的进程 ID
-PIDS=$(sudo lsof -i :$PORT -t)
+PIDS=$(lsof -i :$PORT -t)
 
 # 如果没有找到相关进程，退出
 if [ -z "$PIDS" ]; then
@@ -28,7 +28,6 @@ for PID in $PIDS; do
     echo "ProcessName: $PROCESS_NAME"
     echo "Path: $PROCESS_PATH"
     echo "StartTime: $PROCESS_START_TIME"
-    echo "SessionId: $PROCESS_SESSION_ID"
     echo "----------------------------------"
 done
 
