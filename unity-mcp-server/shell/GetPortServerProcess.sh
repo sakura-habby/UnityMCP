@@ -17,8 +17,8 @@ for PID in $PIDS; do
     # 获取进程详细信息
     PROCESS_NAME=$(ps -p $PID -o comm=)
     PROCESS_PATH=$(ps -p $PID -o command=)
-    PROCESS_START_TIME=$(ps -p $PID -o lstart=)
-    PROCESS_SESSION_ID=$(ps -p $PID -o sid=)
+    PROCESS_START_TIME=$(ps -p $PID -o start=)
+    PROCESS_SESSION_ID=$(ps -p $PID -o sess=)
     PROCESS_COMMAND=$(ps -p $PID -o command=)
 
     # 输出进程信息
@@ -28,6 +28,7 @@ for PID in $PIDS; do
     echo "ProcessName: $PROCESS_NAME"
     echo "Path: $PROCESS_PATH"
     echo "StartTime: $PROCESS_START_TIME"
+    echo "SessionID: $PROCESS_SESSION_ID"
     echo "----------------------------------"
 done
 
