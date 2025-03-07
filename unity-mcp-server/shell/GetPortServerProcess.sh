@@ -4,11 +4,11 @@
 PORT=28080
 
 # 获取使用指定端口的进程 ID
-PIDS=$(netstat -tuln | grep ":$PORT" | awk '{print $7}' | cut -d'/' -f1 | sort -u)
+PIDS=$(sudo lsof -i :$PORT -t)
 
 # 如果没有找到相关进程，退出
 if [ -z "$PIDS" ]; then
-    echo "do not find any process using port: $PORT"
+    echo "No process found using port: $PORT"
     exit 1
 fi
 
@@ -16,14 +16,14 @@ fi
 for PID in $PIDS; do
     # 获取进程详细信息
     PROCESS_NAME=$(ps -p $PID -o comm=)
-    PROCESS_PATH=$(readlink -f /proc/$PID/exe)
+    PROCESS_PATH=$(ps -p $PID -o command=)
     PROCESS_START_TIME=$(ps -p $PID -o lstart=)
     PROCESS_SESSION_ID=$(ps -p $PID -o sid=)
-    PROCESS_COMMAND=$(cat /proc/$PID/cmdline | tr '\0' ' ')
+    PROCESS_COMMAND=$(ps -p $PID -o command=)
 
     # 输出进程信息
     echo "----------------------------------"
-    echo "Id: $PID"
+    echo "PID: $PID"
     echo "CommandLine: $PROCESS_COMMAND"
     echo "ProcessName: $PROCESS_NAME"
     echo "Path: $PROCESS_PATH"
