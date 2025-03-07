@@ -8,6 +8,7 @@ import {
   McpError,
 } from '@modelcontextprotocol/sdk/types.js';
 import { WebSocketServer, WebSocket } from 'ws';
+import { MCP_SERVER_PORT } from './config.js';
 
 interface UnityEditorState {
   activeGameObjects: string[];
@@ -65,7 +66,7 @@ class UnityMCPServer {
     );
 
     // Initialize WebSocket Server for Unity communication
-    this.wsServer = new WebSocketServer({ port: 8080 });
+    this.wsServer = new WebSocketServer({ port: MCP_SERVER_PORT });
     this.setupWebSocket();
     this.setupTools();
 
@@ -132,10 +133,10 @@ class UnityMCPServer {
   }
 
   private setupWebSocket() {
-    console.error('[Unity MCP] WebSocket server starting on port 8080');
+    console.error(`[Unity MCP] WebSocket server starting on port ${MCP_SERVER_PORT}`);
     
     this.wsServer.on('listening', () => {
-      console.error('[Unity MCP] WebSocket server is listening for connections');
+      console.error(`[Unity MCP] WebSocket server is listening for connections on port ${MCP_SERVER_PORT}`);
     });
 
     this.wsServer.on('error', (error) => {
@@ -711,7 +712,7 @@ class UnityMCPServer {
     // Wait for WebSocket server to be ready
     await new Promise<void>((resolve) => {
       this.wsServer.once('listening', () => {
-        console.error('[Unity MCP] WebSocket server is ready on port 8080');
+        console.error(`[Unity MCP] WebSocket server is ready on port ${MCP_SERVER_PORT}`);
         resolve();
       });
     });
