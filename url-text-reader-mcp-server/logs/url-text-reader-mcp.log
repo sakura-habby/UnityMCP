@@ -1,0 +1,233 @@
+{"timestamp":"2025-03-11T07:45:57.649Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://modelcontextprotocol.io/introduction"}}}
+{"timestamp":"2025-03-11T07:45:57.650Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://modelcontextprotocol.io/introduction"}}}
+{"timestamp":"2025-03-11T07:45:57.650Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://modelcontextprotocol.io/introduction","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:45:57.650Z","level":"INFO","message":"开始读取URL: https://modelcontextprotocol.io/introduction, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:46:01.429Z","level":"INFO","message":"成功读取URL: https://modelcontextprotocol.io/introduction","data":{"contentLength":9368}}
+{"timestamp":"2025-03-11T07:46:01.429Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---modelcontextprotocol-i.md","data":null}
+{"timestamp":"2025-03-11T07:46:01.430Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---modelcontextprotocol-i.md","data":null}
+{"timestamp":"2025-03-11T07:46:01.430Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://modelcontextprotocol.io/introduction","contentLength":9368}}
+{"timestamp":"2025-03-11T07:48:20.858Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:48:20.858Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:48:20.858Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:48:20.858Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:48:24.815Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":696}}
+{"timestamp":"2025-03-11T07:48:24.815Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:48:24.815Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":696}}
+{"timestamp":"2025-03-11T07:50:54.781Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:50:54.781Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:50:54.781Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:50:54.781Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:50:55.734Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:50:55.734Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:50:55.735Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:50:55.735Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:51:31.270Z","level":"WARN","message":"父进程 31064 不存在，正在启动关闭程序","data":null}
+{"timestamp":"2025-03-11T07:51:34.441Z","level":"INFO","message":"日志系统初始化成功","data":null}
+{"timestamp":"2025-03-11T07:51:34.442Z","level":"INFO","message":"URL文本阅读器MCP服务器启动","data":null}
+{"timestamp":"2025-03-11T07:51:34.442Z","level":"INFO","message":"URL文本阅读器MCP服务器在stdio上运行","data":null}
+{"timestamp":"2025-03-11T07:51:34.445Z","level":"INFO","message":"收到工具列表请求","data":null}
+{"timestamp":"2025-03-11T07:51:49.462Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:51:49.462Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:51:49.462Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":""}}
+{"timestamp":"2025-03-11T07:51:49.462Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0","data":null}
+{"timestamp":"2025-03-11T07:51:50.745Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:51:50.745Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:51:50.745Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:52:02.244Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:52:02.245Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:52:02.245Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":1,"outputPath":""}}
+{"timestamp":"2025-03-11T07:52:02.245Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 1","data":null}
+{"timestamp":"2025-03-11T07:52:03.307Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:52:03.307Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:52:03.307Z","level":"INFO","message":"   在URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 中找到 5 个有效链接","data":null}
+{"timestamp":"2025-03-11T07:52:03.308Z","level":"INFO","message":"内容已保存到文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---open-biligame-com-docs-20250311075203.md","data":null}
+{"timestamp":"2025-03-11T07:52:03.308Z","level":"INFO","message":"开始读取URL: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip, 深度: 0, 输出路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---pkgdl-biligame-net-too.md","data":null}
+{"timestamp":"2025-03-11T07:52:03.308Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:03.309Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:03.310Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:03.310Z","level":"INFO","message":"开始读取URL: https://www.msa-alliance.cn/, 深度: 0, 输出路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:52:05.662Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":435}}
+{"timestamp":"2025-03-11T07:52:05.663Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:52:05.663Z","level":"INFO","message":"内容已保存到指定路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:05.663Z","level":"INFO","message":"链接内容已保存到单独文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.492Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":434}}
+{"timestamp":"2025-03-11T07:52:07.493Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:52:07.493Z","level":"INFO","message":"已删除现有文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.493Z","level":"INFO","message":"内容已保存到指定路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.493Z","level":"INFO","message":"链接内容已保存到单独文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.521Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":432}}
+{"timestamp":"2025-03-11T07:52:07.521Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:52:07.521Z","level":"INFO","message":"已删除现有文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.521Z","level":"INFO","message":"内容已保存到指定路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.521Z","level":"INFO","message":"链接内容已保存到单独文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.540Z","level":"INFO","message":"成功读取URL: https://www.msa-alliance.cn/","data":{"contentLength":1645}}
+{"timestamp":"2025-03-11T07:52:07.540Z","level":"WARN","message":"页面可能未完全加载: https://www.msa-alliance.cn/","data":null}
+{"timestamp":"2025-03-11T07:52:07.541Z","level":"INFO","message":"内容已保存到指定路径: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:52:07.541Z","level":"INFO","message":"链接内容已保存到单独文件: C:\\Users\\Administrator\\AppData\\Local\\Programs\\Windsurf\\logs\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:52:18.318Z","level":"ERROR","message":"获取URL内容超时: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip，超时时间: 15000ms","data":null}
+{"timestamp":"2025-03-11T07:52:18.318Z","level":"ERROR","message":"读取URL失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T07:52:18.318Z","level":"ERROR","message":"    获取链接内容失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T07:52:18.318Z","level":"INFO","message":"URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 的内容大小: 9.38 KB","data":null}
+{"timestamp":"2025-03-11T07:52:18.318Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9600}}
+{"timestamp":"2025-03-11T07:52:32.938Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:52:32.938Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:52:32.938Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:52:32.938Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:52:34.083Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:52:34.083Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:52:34.083Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:52:34.084Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:52:34.084Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:05.026Z","level":"WARN","message":"父进程 34976 不存在，正在启动关闭程序","data":null}
+{"timestamp":"2025-03-11T07:58:08.378Z","level":"INFO","message":"日志系统初始化成功","data":null}
+{"timestamp":"2025-03-11T07:58:08.378Z","level":"INFO","message":"URL文本阅读器MCP服务器启动","data":null}
+{"timestamp":"2025-03-11T07:58:08.379Z","level":"INFO","message":"URL文本阅读器MCP服务器在stdio上运行","data":null}
+{"timestamp":"2025-03-11T07:58:08.382Z","level":"INFO","message":"收到工具列表请求","data":null}
+{"timestamp":"2025-03-11T07:58:22.295Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:22.295Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:22.295Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:58:22.296Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:58:23.433Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:23.433Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:58:23.433Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:23.434Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:23.434Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:27.981Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:27.981Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:27.981Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:58:27.981Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:58:28.647Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:28.647Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:58:28.647Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:28.647Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:28.647Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:32.822Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:32.822Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:32.822Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:58:32.822Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:58:33.706Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:33.706Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:58:33.706Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:33.707Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:33.707Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:37.128Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:37.128Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":0,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:58:37.128Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":0,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:58:37.128Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 0, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:58:38.042Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:58:38.043Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:58:38.043Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:38.043Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:58:38.043Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9534}}
+{"timestamp":"2025-03-11T07:59:42.874Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:59:42.874Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T07:59:42.874Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":1,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T07:59:42.874Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 1, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T07:59:43.722Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T07:59:43.722Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T07:59:43.723Z","level":"INFO","message":"   在URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 中找到 5 个有效链接","data":null}
+{"timestamp":"2025-03-11T07:59:43.723Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.723Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.724Z","level":"INFO","message":"开始读取URL: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---pkgdl-biligame-net-too.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.724Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.725Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.726Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:43.726Z","level":"INFO","message":"开始读取URL: https://www.msa-alliance.cn/, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.468Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3183}}
+{"timestamp":"2025-03-11T07:59:44.468Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:59:44.469Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.469Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.644Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3282}}
+{"timestamp":"2025-03-11T07:59:44.644Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:59:44.645Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.645Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.645Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.767Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":7252}}
+{"timestamp":"2025-03-11T07:59:44.767Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T07:59:44.767Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.767Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.767Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.920Z","level":"INFO","message":"成功读取URL: https://www.msa-alliance.cn/","data":{"contentLength":1690}}
+{"timestamp":"2025-03-11T07:59:44.920Z","level":"WARN","message":"页面可能未完全加载: https://www.msa-alliance.cn/","data":null}
+{"timestamp":"2025-03-11T07:59:44.920Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:59:44.920Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T07:59:58.728Z","level":"ERROR","message":"获取URL内容超时: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip，超时时间: 15000ms","data":null}
+{"timestamp":"2025-03-11T07:59:58.729Z","level":"ERROR","message":"读取URL失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T07:59:58.729Z","level":"ERROR","message":"    获取链接内容失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T07:59:58.729Z","level":"INFO","message":"URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 的内容大小: 9.38 KB","data":null}
+{"timestamp":"2025-03-11T07:59:58.729Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9600}}
+{"timestamp":"2025-03-11T08:00:07.882Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T08:00:07.883Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T08:00:07.883Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":1,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T08:00:07.883Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 1, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T08:00:09.050Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T08:00:09.050Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T08:00:09.051Z","level":"INFO","message":"   在URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 中找到 5 个有效链接","data":null}
+{"timestamp":"2025-03-11T08:00:09.051Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.051Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.051Z","level":"INFO","message":"开始读取URL: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---pkgdl-biligame-net-too.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.051Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.052Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.053Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.054Z","level":"INFO","message":"开始读取URL: https://www.msa-alliance.cn/, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.806Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3183}}
+{"timestamp":"2025-03-11T08:00:09.806Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:09.806Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.807Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:09.807Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.025Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":7252}}
+{"timestamp":"2025-03-11T08:00:10.025Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:10.025Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.026Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.026Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.040Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3282}}
+{"timestamp":"2025-03-11T08:00:10.041Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:10.041Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.041Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.041Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.260Z","level":"INFO","message":"成功读取URL: https://www.msa-alliance.cn/","data":{"contentLength":1690}}
+{"timestamp":"2025-03-11T08:00:10.260Z","level":"WARN","message":"页面可能未完全加载: https://www.msa-alliance.cn/","data":null}
+{"timestamp":"2025-03-11T08:00:10.260Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.260Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:10.260Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:24.065Z","level":"ERROR","message":"获取URL内容超时: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip，超时时间: 15000ms","data":null}
+{"timestamp":"2025-03-11T08:00:24.065Z","level":"ERROR","message":"读取URL失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T08:00:24.065Z","level":"ERROR","message":"    获取链接内容失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T08:00:24.065Z","level":"INFO","message":"URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 的内容大小: 9.38 KB","data":null}
+{"timestamp":"2025-03-11T08:00:24.065Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9600}}
+{"timestamp":"2025-03-11T08:00:45.278Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T08:00:45.278Z","level":"INFO","message":"收到工具调用请求: read-url-text","data":{"toolName":"read-url-text","arguments":{"depth":1,"outputPath":"d:\\UGit\\UnityMCP","url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280"}}}
+{"timestamp":"2025-03-11T08:00:45.278Z","level":"INFO","message":"开始处理URL文本读取请求","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","depth":1,"outputPath":"d:\\UGit\\UnityMCP"}}
+{"timestamp":"2025-03-11T08:00:45.278Z","level":"INFO","message":"开始读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280, 深度: 1, 输出路径: d:\\UGit\\UnityMCP","data":null}
+{"timestamp":"2025-03-11T08:00:46.213Z","level":"INFO","message":"成功读取URL: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":{"contentLength":9534}}
+{"timestamp":"2025-03-11T08:00:46.213Z","level":"WARN","message":"页面可能未完全加载: https://open.biligame.com/docs/#/view-v2/1697151934093537280","data":null}
+{"timestamp":"2025-03-11T08:00:46.214Z","level":"INFO","message":"   在URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 中找到 5 个有效链接","data":null}
+{"timestamp":"2025-03-11T08:00:46.214Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---open-biligame-com-docs.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.214Z","level":"INFO","message":"开始读取URL: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---pkgdl-biligame-net-too.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.214Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.215Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.215Z","level":"INFO","message":"开始读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.216Z","level":"INFO","message":"开始读取URL: https://www.msa-alliance.cn/, 深度: 0, 输出路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.988Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3183}}
+{"timestamp":"2025-03-11T08:00:46.988Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/copp/2/61dc354c6cfb250048afe50d?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:46.989Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.989Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.990Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":3282}}
+{"timestamp":"2025-03-11T08:00:46.990Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/3rdsdk/2/61dc32a12ee5b600393cdb0a?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:46.990Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.990Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:46.990Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:47.243Z","level":"INFO","message":"成功读取URL: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":{"contentLength":7252}}
+{"timestamp":"2025-03-11T08:00:47.243Z","level":"WARN","message":"页面可能未完全加载: https://game.bilibili.com/agreement/privacy/2/628f25c2fb3ee100426c1095?fromOpenUri=0&isOwnLink=1&aloneBack=1&alone=1","data":null}
+{"timestamp":"2025-03-11T08:00:47.244Z","level":"INFO","message":"已删除现有文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:47.244Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:47.244Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---game-bilibili-com-agre.md","data":null}
+{"timestamp":"2025-03-11T08:00:47.932Z","level":"INFO","message":"成功读取URL: https://www.msa-alliance.cn/","data":{"contentLength":1690}}
+{"timestamp":"2025-03-11T08:00:47.932Z","level":"WARN","message":"页面可能未完全加载: https://www.msa-alliance.cn/","data":null}
+{"timestamp":"2025-03-11T08:00:47.932Z","level":"INFO","message":"内容已保存到指定路径: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:00:47.932Z","level":"INFO","message":"链接内容已保存到单独文件: d:\\UGit\\UnityMCP\\url-content-https---www-msa-alliance-cn-.md","data":null}
+{"timestamp":"2025-03-11T08:01:01.215Z","level":"ERROR","message":"获取URL内容超时: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip，超时时间: 15000ms","data":null}
+{"timestamp":"2025-03-11T08:01:01.215Z","level":"ERROR","message":"读取URL失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T08:01:01.215Z","level":"ERROR","message":"    获取链接内容失败: https://pkgdl.biligame.net/tool/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%B8%B8%E6%88%8F_Android_SDK_v5.9.2%2820241016212349%29.zip","data":{}}
+{"timestamp":"2025-03-11T08:01:01.215Z","level":"INFO","message":"URL https://open.biligame.com/docs/#/view-v2/1697151934093537280 的内容大小: 9.38 KB","data":null}
+{"timestamp":"2025-03-11T08:01:01.215Z","level":"INFO","message":"URL文本读取成功","data":{"url":"https://open.biligame.com/docs/#/view-v2/1697151934093537280","contentLength":9600}}

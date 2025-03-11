@@ -20,8 +20,11 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.6.0",
+    "@types/jsdom": "^21.1.7",
+    "axios": "^1.8.2",
     "express": "^4.18.2",
     "jayson": "^4.1.0",
+    "jsdom": "^26.0.0",
     "node-fetch": "^3.3.2",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.22.3"

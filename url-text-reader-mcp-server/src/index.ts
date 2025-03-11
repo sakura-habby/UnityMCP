@@ -7,15 +7,11 @@ import {
   ListToolsRequestSchema,
   McpError,
 } from '@modelcontextprotocol/sdk/types.js';
-import { z } from 'zod';
-import { zodToJsonSchema } from 'zod-to-json-schema';
 import { logger } from './logger.js';
 import { UrlTextReader } from './services/url-text-reader.js';
+import * as fs from 'fs';
+import * as path from 'path';
 
-// 定义读取URL文本的Schema
-const ReadUrlTextSchema = z.object({
-  url: z.string().url('必须提供有效的URL'),
-});
 
 // 创建URL文本读取服务
 const urlTextService = new UrlTextReader();
@@ -108,12 +104,12 @@ class UrlTextReaderMCP_Server {
         tools: [
           {
             name: 'read-url-text',
-            description: '读取指定URL的网页文本内容',
+            description: 'read-url-text',
             category: 'Web',
-            tags: ['url', 'text', 'web', 'content'],
+            tags: ['url', 'text', 'web', 'content', 'read-url-text', 'r.jina.ai'],
             inputSchema: {
               type: 'object',
-              required: ['url'],
+              required: ['url', 'outputPath'],
               properties: {
                 url: {
                   type: 'string',
@@ -125,11 +121,22 @@ class UrlTextReaderMCP_Server {
                     'https://github.com'
                   ]
                 },
+                depth: {
+                  type: 'integer',
+                  minimum: 0,
+                  maximum: 5,
+                  default: 0,
+                  description: 'Recursive link retrieval depth (default 0 - no links), maximum 5. When set to 2 or higher, will fetch links from current document and continue retrieving their content.'
+                },
+                outputPath: {
+                  type: 'string',
+                  description: 'outputPath to save the url content, suggested to be project root path. Example: "d:\\UGit\\UnityMCP"'
+                }
               },
             },
             returns: {
               type: 'object',
-              description: '返回包含URL文本内容的JSON对象',
+              description: 'read-url-text',
               properties: {
                 content: {
                   type: 'array',
@@ -137,7 +144,13 @@ class UrlTextReaderMCP_Server {
                     type: 'object',
                     properties: {
                       type: { type: 'string', enum: ['text'] },
-                      text: { type: 'string', description: 'URL的文本内容' }
+                      result: {
+                        type: 'object',
+                        properties: {
+                          success: { type: 'boolean' },
+                          error: { type: 'string', description: '错误信息' }
+                        }
+                      }
                     }
                   }
                 }
@@ -147,12 +160,51 @@ class UrlTextReaderMCP_Server {
               {
                 params: {
                   url: 'https://example.com',
+                  depth: 0,
+                  outputPath: './output'
                 },
                 result: {
                   content: [
                     {
                       type: 'text',
-                      text: 'Example Domain\nThis domain is for use in illustrative examples in documents...'
+                      result: {
+                        success: false,
+                        error: '错误信息'
+                      }
+                    }
+                  ]
+                },
+              },
+              {
+                params: {
+                  url: 'https://example.com',
+                  depth: 2,
+                  outputPath: './output'
+                },
+                result: {
+                  content: [
+                    {
+                      type: 'text',
+                      result: {
+                        success: true
+                      }
+                    }
+                  ]
+                },
+              },
+              {
+                params: {
+                  url: 'https://example.com',
+                  depth: 1,
+                  outputPath: './output'
+                },
+                result: {
+                  content: [
+                    {
+                      type: 'text',
+                      result: {
+                        success: true
+                      }
                     }
                   ]
                 },
@@ -209,12 +261,47 @@ class UrlTextReaderMCP_Server {
 
           try {
             // 记录传递给MCP的JSON数据，用于调试
-            logger.info(`开始处理URL文本读取请求`, {
-              url: args.url
+            logger.info(`收到工具调用请求: read-url-text`, {
+              toolName: 'read-url-text',
+              arguments: args
             });
             
+            logger.info(`开始处理URL文本读取请求`, {
+              url: args.url,
+              depth: args.depth,
+              outputPath: args.outputPath
+            });
+            
+            // 检查outputPath是否为文件夹或文件，如果是文件则获取其所在文件夹
+            let outputPath = args.outputPath as string;
+            if (outputPath) {
+              try {
+                // 检查路径是否存在
+                if (fs.existsSync(outputPath)) {
+                  // 检查是否是目录
+                  const stats = fs.statSync(outputPath);
+                  if (!stats.isDirectory()) {
+                    // 如果是文件，获取其所在目录
+                    outputPath = path.dirname(outputPath);
+                    logger.info(`输出路径是文件，使用其所在目录: ${outputPath}`);
+                  }
+                } else {
+                  // 路径不存在，检查是否有扩展名来判断是否为文件
+                  if (path.extname(outputPath) !== '') {
+                    // 有扩展名，认为是文件路径，获取其所在目录
+                    outputPath = path.dirname(outputPath);
+                    logger.info(`输出路径不存在且有扩展名，使用其所在目录: ${outputPath}`);
+                  }
+                  // 否则认为是目录路径，直接使用
+                }
+              } catch (error) {
+                logger.error(`处理输出路径时出错: ${outputPath}`, error);
+                // 出错时仍然使用原始路径
+              }
+            }
+            
             // 使用URL文本读取服务获取内容
-            const text = await urlTextService.readUrlText(args.url as string);
+            const text = await urlTextService.readUrlText(args.url as string, args.depth as number, outputPath);
             
             logger.info(`URL文本读取成功`, { 
               url: args.url,
@@ -225,7 +312,10 @@ class UrlTextReaderMCP_Server {
               content: [
                 {
                   type: 'text',
-                  text: text,
+                  result: {
+                    success: true,
+                    text: text,
+                  },
                 },
               ],
             };
@@ -246,10 +336,17 @@ class UrlTextReaderMCP_Server {
             }
 
             // 通用错误回退
-            throw new McpError(
-              ErrorCode.InternalError,
-              `Failed to read URL text: ${error instanceof Error ? error.message : 'Unknown error'}`
-            );
+            return {
+              content: [
+                {
+                  type: 'text',
+                  result: {
+                    success: false,
+                    error: `Failed to read URL text: ${error instanceof Error ? error.message : 'Unknown error'}`
+                  },
+                },
+              ],
+            };
           }
         }
 
@@ -259,8 +356,7 @@ class UrlTextReaderMCP_Server {
           throw new McpError(
             ErrorCode.MethodNotFound,
             `Unknown tool: ${name}`
-          );
-      }
+          );      }
     });
   }
 
