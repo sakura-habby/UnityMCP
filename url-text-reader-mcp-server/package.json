@@ -1,0 +1,35 @@
+{
+  "name": "url-text-reader-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP for read url text content",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "url-text-reader-mcp-server": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc && node --input-type=module -e \"import { chmod } from 'fs/promises'; await chmod('build/index.js', '755');\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "start:http": "node build/start-http-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "express": "^4.18.2",
+    "jayson": "^4.1.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.10.5",
+    "@types/ws": "^8.5.14",
+    "typescript": "^5.3.3"
+  }
+}
