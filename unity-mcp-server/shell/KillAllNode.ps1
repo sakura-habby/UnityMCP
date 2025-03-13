@@ -1,0 +1,1 @@
+Get-Process -Name "node" | Where-Object {$_.CommandLine -like "*code-diagrams-mcp-server*"} | Stop-Process -Force
